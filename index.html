@@ -37,6 +37,9 @@
 
       <div>Loading, please wait...</div>
     </div>
+    <a-assets>
+    <video id="penguin-sledding" autoplay loop="true" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4"></video>
+  </a-assets>
 
     <!-- a-frame scene -->
     <a-scene
@@ -44,24 +47,40 @@
       renderer="logarithmicDepthBuffer: true;"
       embedded
       arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+<!--       <a-assets> -->
+<!--     <video id="penguin-sledding"  loop="true" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4"></video> -->
+<!--       </a-assets> -->
       <!-- a-nft is the anchor that defines an Image Tracking entity -->
       <!-- on 'url' use the path to the Image Descriptors created before. -->
       <!-- the path should end with the name without the extension e.g. if file is trex.fset' the path should end with trex -->
       <a-nft
         type="nft"
-        url="https://github.com/Abhishek-cmd13/MArk2-AR/blob/main/Image/jobs"
+        url="https://cdn.glitch.me/eec278d2-7baa-41ce-9611-587ada79ecf6%2Fjobs"
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
         smoothThreshold="5">
+  
+<!--                <a-assets>
+                 <video id="penguin-sledding" loop="true" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4"></video>
+               </a-assets>
+ -->
+  <!-- Using the asset management system. -->
+               <a-video src="#penguin-sledding" loop="true" width="16" height="9" position="0 0 -200" scale="10 10 10"></a-video>
+
+  <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
+<!--                      <a-video src="airbending.mp4"></a-video> -->
+        
+<!--                <a-video src="#penguin-sledding" autoplay position="0 0 -20" scale="100 100 100"></a-video> -->
+
           <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
-          <a-entity
+<!--           <a-entity
           gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
               scale="5 5 5"
               position="100 100 -10"
           >
-          </a-entity>
-          <a-box color="red" scale="5 5 5"></a-box>
+          </a-entity> -->
+<!--           <a-box color="red" scale="5 5 5"></a-box> -->
       </a-nft>
       <!-- static camera that moves according to the device movemenents -->
       <a-entity camera></a-entity>
